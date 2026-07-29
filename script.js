@@ -43,19 +43,42 @@ if (!reducedMotion && studentElement && securityElement) {
   }, 140);
 }
 
-if (queryElement && !reducedMotion) {
+let queryTypingTimer;
+
+function startQueryTyping() {
+  if (!queryElement || reducedMotion) return;
+
+  window.clearTimeout(queryTypingTimer);
   queryElement.textContent = "";
+  cursorElement?.classList.remove("complete");
   let position = 0;
 
-  const typingTimer = window.setInterval(() => {
+  const typeNextCharacter = () => {
     position += 1;
     queryElement.textContent = securityQuery.slice(0, position);
 
     if (position >= securityQuery.length) {
-      window.clearInterval(typingTimer);
       cursorElement?.classList.add("complete");
+      return;
     }
-  }, 28);
+
+    const previousCharacter = securityQuery[position - 1];
+    queryTypingTimer = window.setTimeout(typeNextCharacter, previousCharacter === "\n" ? 260 : 44);
+  };
+
+  queryTypingTimer = window.setTimeout(typeNextCharacter, 750);
+}
+
+if (queryElement) {
+  if (reducedMotion) {
+    queryElement.textContent = securityQuery;
+    cursorElement?.classList.add("complete");
+  } else if (document.readyState === "complete") {
+    startQueryTyping();
+  } else {
+    queryElement.textContent = "";
+    window.addEventListener("load", startQueryTyping, { once: true });
+  }
 }
 
 if ("IntersectionObserver" in window && !reducedMotion) {

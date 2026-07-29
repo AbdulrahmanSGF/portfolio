@@ -219,11 +219,11 @@ h1 {
   vertical-align: -0.2em;
   background: var(--blue);
   box-shadow: 0 0 8px rgba(114, 199, 245, 0.8);
-  animation: cursor-blink 1.15s steps(1, end) infinite;
+  animation: cursor-blink 1.6s steps(1, end) infinite;
 }
 
 .typing-cursor.complete {
-  animation-duration: 4s;
+  animation-duration: 3s;
 }
 
 .section {
@@ -665,5 +665,303 @@ footer a:focus-visible {
   .js .reveal {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* Phone and tablet layout */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.hero-content,
+.certificate-copy {
+  min-width: 0;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (max-width: 800px) {
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .certificate-card {
+    grid-template-columns: 42px 70px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .certificate-mark {
+    display: grid;
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 620px) {
+  html {
+    scroll-padding-top: 66px;
+  }
+
+  .site-header {
+    height: 66px;
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 13px;
+    letter-spacing: -0.04em;
+  }
+
+  .menu-button {
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    margin-right: -10px;
+  }
+
+  nav {
+    max-height: calc(100svh - 66px);
+    overflow-y: auto;
+  }
+
+  nav a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .hero {
+    min-height: 100svh;
+    padding: 112px 20px 58px;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    max-width: none;
+  }
+
+  .hero-glow {
+    top: -26%;
+    width: 175vw;
+  }
+
+  .kicker {
+    max-width: 100%;
+    font-size: 9px;
+    line-height: 1.55;
+    letter-spacing: 0.09em;
+    overflow-wrap: anywhere;
+  }
+
+  h1 {
+    margin: 22px 0 28px;
+    font-size: clamp(42px, 14.5vw, 58px);
+    line-height: 0.94;
+    letter-spacing: -0.045em;
+  }
+
+  .hero-case {
+    max-width: 100%;
+    font-size: clamp(9px, 2.65vw, 11px);
+    line-height: 1.72;
+    letter-spacing: -0.035em;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .hero-note {
+    margin-top: 18px;
+    font-size: 9px;
+    overflow-wrap: anywhere;
+  }
+
+  .section {
+    padding: 70px 20px;
+  }
+
+  .section-number {
+    padding-bottom: 18px;
+  }
+
+  .section-heading {
+    gap: 18px;
+    padding: 42px 0 34px;
+  }
+
+  .section-heading h2 {
+    max-width: 100%;
+    font-size: clamp(36px, 12vw, 48px);
+    letter-spacing: -0.055em;
+    overflow-wrap: anywhere;
+  }
+
+  .section-heading p {
+    font-size: 14px;
+  }
+
+  .section-transition::before {
+    left: 20px;
+  }
+
+  .section-transition.active::before {
+    width: calc(100vw - 40px);
+  }
+
+  .certificate-card {
+    min-height: 0;
+    grid-template-columns: 58px minmax(0, 1fr);
+    align-items: start;
+    gap: 16px;
+    padding: 30px 0;
+  }
+
+  .certificate-index {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+
+  .certificate-mark {
+    display: grid;
+    width: 58px;
+    height: 58px;
+    margin-top: 3px;
+  }
+
+  .certificate-copy h3 {
+    font-size: 27px;
+  }
+
+  .certificate-copy h4 {
+    margin-bottom: 13px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .certificate-copy > p:last-of-type {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .certificate-title-row {
+    gap: 8px;
+  }
+
+  .certificate-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .certificate-links a,
+  .certificate-links > span {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+    white-space: normal;
+    line-height: 1.45;
+  }
+
+  .say-hello-art {
+    width: 100%;
+    margin: -4px 0 -24px;
+  }
+
+  .contact-links {
+    margin-top: 32px;
+  }
+
+  .contact-links a,
+  .contact-static {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px 16px;
+    padding: 20px 0;
+    min-height: 72px;
+  }
+
+  .contact-links small,
+  .contact-static small {
+    grid-column: 1 / -1;
+  }
+
+  .contact-links strong,
+  .contact-static strong {
+    min-width: 0;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-static {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    min-height: 0;
+    padding: 30px 20px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header,
+  .hero,
+  .section,
+  footer {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .logo {
+    font-size: 12px;
+  }
+
+  .kicker {
+    font-size: 8px;
+  }
+
+  h1 {
+    font-size: clamp(40px, 14vw, 50px);
+  }
+
+  .hero-case {
+    font-size: 9px;
+  }
+
+  .section-heading h2 {
+    font-size: 36px;
+  }
+
+  .section-transition::before {
+    left: 18px;
+  }
+
+  .section-transition.active::before {
+    width: calc(100vw - 36px);
+  }
+
+  .certificate-card {
+    grid-template-columns: 50px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .certificate-mark {
+    width: 50px;
+    height: 50px;
+  }
+
+  .certificate-copy h3 {
+    font-size: 25px;
   }
 }
