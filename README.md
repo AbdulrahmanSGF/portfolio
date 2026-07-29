@@ -14,7 +14,7 @@ A static, responsive cybersecurity portfolio prepared for GitHub Pages.
 
 GitHub will provide a URL similar to:
 
-`https://your-username.github.io/portfolio/`
+`https://AbdulrahmanSGF.github.io/portfolio/`
 
 ## Customize later
 
