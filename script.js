@@ -16,7 +16,7 @@ const navigation = document.querySelector("#primary-navigation");
 
 document.querySelector("#current-year").textContent = new Date().getFullYear();
 
-if (!reducedMotion && studentElement && securityElement) {
+if (studentElement && securityElement) {
   let scrambled = false;
   let activeTarget = studentElement;
   let activeSource = studentLabel;

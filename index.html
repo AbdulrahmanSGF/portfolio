@@ -7,9 +7,9 @@
   <meta name="theme-color" content="#f3f5f5">
   <title>Abdulrahman Alssaggaf — Cybersecurity Portfolio</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=9">
   <script>document.documentElement.classList.add("js");</script>
-  <script src="script.js?v=6" defer></script>
+  <script src="script.js?v=9" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -32,10 +32,21 @@
           #0x04 <span id="student-label">IT STUDENT</span> · #0x0A <span id="security-label">CYBERSECURITY</span>
         </p>
         <h1 class="hero-enter delay-one">Abdulrahman<br><span>Alssaggaf.</span></h1>
-        <pre class="hero-case hero-enter delay-two" aria-label="Cybersecurity profile query"><code id="security-query">index=KingAbdulazizUniversity sourcetype=SecurityProfile
+        <div class="splunk-search-panel hero-enter delay-two" role="region" aria-label="Splunk search editor">
+          <div class="splunk-search-header">
+            <strong>New Search</strong>
+            <span>Search</span>
+          </div>
+          <div class="splunk-search-row">
+            <pre class="hero-case" aria-label="Cybersecurity profile query"><code id="security-query">index=KingAbdulazizUniversity sourcetype=SecurityProfile
 | search major="Information Technology"
 | eval interests=mvappend("Defensive Cybersecurity", "Digital Forensics")
 | table Certificates Contact</code><span class="typing-cursor" aria-hidden="true"></span></pre>
+            <span class="splunk-time-range">All time <i aria-hidden="true">▾</i></span>
+            <span class="splunk-search-button" aria-hidden="true"><i></i></span>
+          </div>
+          <div class="splunk-search-meta"><i aria-hidden="true"></i> SPL · SecurityProfile</div>
+        </div>
         <p class="hero-note hero-enter delay-three">IT'24 · King Abdulaziz University</p>
       </div>
     </section>
