@@ -46,7 +46,7 @@ if (!reducedMotion && studentElement && securityElement) {
 let queryTypingTimer;
 
 function startQueryTyping() {
-  if (!queryElement || reducedMotion) return;
+  if (!queryElement) return;
 
   window.clearTimeout(queryTypingTimer);
   queryElement.textContent = "";
@@ -70,10 +70,7 @@ function startQueryTyping() {
 }
 
 if (queryElement) {
-  if (reducedMotion) {
-    queryElement.textContent = securityQuery;
-    cursorElement?.classList.add("complete");
-  } else if (document.readyState === "complete") {
+  if (document.readyState === "complete") {
     startQueryTyping();
   } else {
     queryElement.textContent = "";

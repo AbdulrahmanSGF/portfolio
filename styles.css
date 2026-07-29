@@ -662,6 +662,15 @@ footer a:focus-visible {
     transition-duration: 0.01ms !important;
   }
 
+  /* Keep the terminal cursor readable instead of turning it into a rapid flicker. */
+  .typing-cursor {
+    animation-duration: 1.6s !important;
+  }
+
+  .typing-cursor.complete {
+    animation-duration: 3s !important;
+  }
+
   .js .reveal {
     opacity: 1;
     transform: none;
