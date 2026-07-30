@@ -7,13 +7,11 @@
   <meta name="theme-color" content="#f3f5f5">
   <title>Abdulrahman Alssaggaf — Cybersecurity Portfolio</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=10">
-  <link rel="stylesheet" href="social-preview.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=9">
   <script>document.documentElement.classList.add("js");</script>
-  <script src="script.js?v=10" defer></script>
+  <script src="script.js?v=9" defer></script>
 </head>
 <body>
-  <span class="cursor-glow" id="cursor-glow" aria-hidden="true"></span>
   <header class="site-header">
     <a class="logo" href="#top">@AbdulrahmanSGF<span>.</span></a>
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">
@@ -23,7 +21,6 @@
       <a href="#certificates">Certificates</a>
       <a href="#contact">Contact</a>
     </nav>
-    <span class="scroll-progress" aria-hidden="true"><i id="scroll-progress-bar"></i></span>
   </header>
 
   <main>
@@ -38,20 +35,17 @@
         <div class="splunk-search-panel hero-enter delay-two" role="region" aria-label="Splunk search editor">
           <div class="splunk-search-header">
             <strong>New Search</strong>
+            <span>Search</span>
           </div>
           <div class="splunk-search-row">
-            <textarea class="hero-case splunk-query-input" id="security-query" aria-label="Read-only SPL query" rows="1" readonly spellcheck="false">index=KingAbdulazizUniversity sourcetype=SecurityProfile
+            <pre class="hero-case" aria-label="Cybersecurity profile query"><code id="security-query">index=KingAbdulazizUniversity sourcetype=SecurityProfile
 | search major="Information Technology"
 | eval interests=mvappend("Defensive Cybersecurity", "Digital Forensics")
-| table Certificates Contact</textarea>
-            <select class="splunk-time-range" id="splunk-time-range" aria-label="Search time range">
-              <option>All time</option>
-              <option>Last 24 hours</option>
-              <option>Last 7 days</option>
-            </select>
-            <button class="splunk-search-button" id="splunk-search-button" type="button" aria-label="Run SPL search"><i aria-hidden="true"></i></button>
+| table Certificates Contact</code><span class="typing-cursor" aria-hidden="true"></span></pre>
+            <span class="splunk-time-range">All time <i aria-hidden="true">▾</i></span>
+            <span class="splunk-search-button" aria-hidden="true"><i></i></span>
           </div>
-          <div class="splunk-search-meta" id="splunk-search-status" aria-live="polite"><i aria-hidden="true"></i><span>Typing SPL query...</span></div>
+          <div class="splunk-search-meta"><i aria-hidden="true"></i> SPL · SecurityProfile</div>
         </div>
         <p class="hero-note hero-enter delay-three">IT'24 · King Abdulaziz University</p>
       </div>
@@ -65,7 +59,7 @@
       </div>
 
       <div class="certificate-list">
-        <article class="certificate-card reveal" style="transition-delay:0ms">
+        <article class="certificate-card reveal">
           <span class="certificate-index">01</span>
           <div class="certificate-mark" aria-hidden="true"><img src="assets/certificates/ejpt-certification.svg" alt=""></div>
           <div class="certificate-copy">
@@ -80,7 +74,7 @@
           </div>
         </article>
 
-        <article class="certificate-card reveal" style="transition-delay:70ms">
+        <article class="certificate-card reveal">
           <span class="certificate-index">02</span>
           <div class="certificate-mark" aria-hidden="true"><img src="assets/certificates/ecthp-certification.svg" alt=""></div>
           <div class="certificate-copy">
@@ -95,7 +89,7 @@
           </div>
         </article>
 
-        <article class="certificate-card reveal" style="transition-delay:140ms">
+        <article class="certificate-card reveal">
           <span class="certificate-index">03</span>
           <div class="certificate-mark" aria-hidden="true"><img src="assets/certificates/ecir.svg" alt=""></div>
           <div class="certificate-copy">
@@ -110,7 +104,7 @@
           </div>
         </article>
 
-        <article class="certificate-card reveal" style="transition-delay:210ms">
+        <article class="certificate-card reveal">
           <span class="certificate-index">04</span>
           <div class="certificate-mark" aria-hidden="true"><img src="assets/certificates/ecdfp.svg" alt=""></div>
           <div class="certificate-copy">
@@ -125,7 +119,7 @@
           </div>
         </article>
 
-        <article class="certificate-card reveal" style="transition-delay:280ms">
+        <article class="certificate-card reveal">
           <span class="certificate-index">05</span>
           <div class="certificate-mark" aria-hidden="true"><img src="assets/certificates/ewptx.svg" alt=""></div>
           <div class="certificate-copy">
@@ -140,7 +134,7 @@
           </div>
         </article>
 
-        <article class="certificate-card reveal" style="transition-delay:350ms">
+        <article class="certificate-card reveal">
           <span class="certificate-index">06</span>
           <div class="certificate-mark certificate-text-mark" aria-hidden="true">THM</div>
           <div class="certificate-copy">
@@ -159,31 +153,20 @@
 
     <section class="section contact section-transition" id="contact">
       <p class="section-number reveal">02 / CONTACT</p>
-      <div class="contact-content">
-        <img class="say-hello-art reveal" style="transition-delay:60ms" src="assets/say-hello.png" alt="Say Hello!">
+      <div class="contact-content reveal">
+        <img class="say-hello-art" src="assets/say-hello.png" alt="Say Hello!">
         <div class="contact-links">
-          <a class="reveal" style="transition-delay:100ms" href="mailto:abdulrahman.sgf@gmail.com"><small>Email</small><strong>abdulrahman.sgf@gmail.com</strong><span>↗</span></a>
-          <div class="contact-social-row reveal" data-social-profile="linkedin" style="transition-delay:160ms">
-            <small>LinkedIn</small>
-            <a class="social-link" href="https://www.linkedin.com/in/abdulrahmansgf/" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-expanded="false"><strong>@AbdulrahmanSGF</strong></a>
-            <span class="contact-arrow" aria-hidden="true">↗</span>
-          </div>
-          <div class="contact-social-row reveal" data-social-profile="x" style="transition-delay:220ms">
-            <small>X</small>
-            <a class="social-link" href="https://x.com/AbdulrahmannSGF" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-expanded="false"><strong>@AbdulrahmannSGF</strong></a>
-            <span class="contact-arrow" aria-hidden="true">↗</span>
-          </div>
-          <div class="contact-static reveal" style="transition-delay:280ms"><small>Discord</small><strong>WiseD7my</strong></div>
+          <a href="mailto:abdulrahman.sgf@gmail.com"><small>Email</small><strong>abdulrahman.sgf@gmail.com</strong><span>↗</span></a>
+          <a href="https://www.linkedin.com/in/abdulrahmansgf/" target="_blank" rel="noreferrer"><small>LinkedIn</small><strong>@AbdulrahmanSGF</strong><span>↗</span></a>
+          <a href="https://x.com/AbdulrahmannSGF" target="_blank" rel="noreferrer"><small>X</small><strong>@AbdulrahmannSGF</strong><span>↗</span></a>
+          <div class="contact-static"><small>Discord</small><strong>WiseD7my</strong></div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="reveal">
-    <div class="footer-terminal" aria-label="Portfolio terminal signature">
-      <span>┌──(visitor㉿portfolio)-[~]</span>
-      <span>└─$ exiftool Abdulrahman-Alssaggaf.profile</span>
-    </div>
+  <footer>
+    <p>© <span id="current-year"></span> Abdulrahman Alssaggaf</p>
     <a href="#top">Back to top ↑</a>
   </footer>
 </body>
